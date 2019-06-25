@@ -90,7 +90,7 @@ class CurriculumTableViewController: UITableViewController {
         
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             let c = UIAlertController(title: "删除课程", message: "您是否要将课程删除", preferredStyle: .alert)
             let alter2 = UIAlertAction(title: "否", style: .cancel, handler: nil)

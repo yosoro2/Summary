@@ -75,7 +75,7 @@ class ShopTableViewController: UITableViewController {
         performSegue(withIdentifier: "shopdetails", sender: self)
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             let c = UIAlertController(title: "删除物品", message: "您是否删除本件物品", preferredStyle: .alert)
             let alter2 = UIAlertAction(title: "否", style: .cancel, handler: nil)

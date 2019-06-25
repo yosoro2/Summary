@@ -89,7 +89,7 @@ class PBookTableViewController: UITableViewController {
         
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             //删除数组中的数据
             let d = UIAlertController(title: "书本将被移除", message: "是否将这本书移除", preferredStyle: .alert)

@@ -30,7 +30,7 @@ class PersonalTableViewController: UITableViewController {
         tableView.rowHeight = 200
     }
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             let c = UIAlertController(title: "无法删除", message: "组员缺一不可", preferredStyle: .alert)
             let alter2 = UIAlertAction(title: "cancel", style: .cancel, handler: nil)

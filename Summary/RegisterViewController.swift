@@ -38,14 +38,17 @@ class RegisterViewController: UIViewController {
                 self.present(tip, animated: true, completion: nil)
                 SVProgressHUD.dismiss()
             }else if self.emailText.text!.isEmpty && isSuccessful {
-                
                 print("注册成功,")
                 SVProgressHUD.dismiss()
+                let tip = UIAlertController(title: "提示", message: "注册成功", preferredStyle: .alert)
+                let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 //self.performSegue(withIdentifier: "goToChat", sender: self)
                 self.presentingViewController!.dismiss(animated: true, completion: nil)
             }else if isSuccessful && !self.emailText.text!.isEmpty{
                 print("注册成功.")
                 SVProgressHUD.dismiss()
+                let tip = UIAlertController(title: "提示", message: "注册成功", preferredStyle: .alert)
+                let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 self.performSegue(withIdentifier: "goToHome", sender: self)
                 //self.presentingViewController!.dismiss(animated: true, completion: nil)
             }else{
