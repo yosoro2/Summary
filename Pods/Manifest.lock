@@ -1,0 +1,20 @@
+PODS:
+  - BmobSDK (2.3.1)
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - BmobSDK
+  - SVProgressHUD
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - BmobSDK
+    - SVProgressHUD
+
+SPEC CHECKSUMS:
+  BmobSDK: e0f9e4b451233a80af63a8ae4f2d239474bf567b
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: daa0792f726e21e66ce89c737de7a7bb52ba85ac
+
+COCOAPODS: 1.5.2
