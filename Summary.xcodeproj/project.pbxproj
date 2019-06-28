@@ -16,6 +16,7 @@
 		13E45C8F22C0BDE100F5AF6D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E45C8E22C0BDE100F5AF6D /* LoginViewController.swift */; };
 		13E45C9122C0C02800F5AF6D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E45C9022C0C02800F5AF6D /* RegisterViewController.swift */; };
 		988EFD67F959DE32AFB3FE0B /* Pods_Summary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE67F49B6C05D98D0897697 /* Pods_Summary.framework */; };
+		9B31CFD022C638AD008F834D /* ChatViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B31CFCF22C638AD008F834D /* ChatViewViewController.swift */; };
 		9B3D868421EA4BDE009E5DFA /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3D868321EA4BDE009E5DFA /* ShopTableViewCell.swift */; };
 		9B3D868621EA4EDD009E5DFA /* ShopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3D868521EA4EDD009E5DFA /* ShopTableViewController.swift */; };
 		9B3D868821EA813D009E5DFA /* ShopWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3D868721EA813D009E5DFA /* ShopWebViewController.swift */; };
@@ -29,7 +30,6 @@
 		9B86A01B21EF3605001E8C25 /* CurriculumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86A01821EF3605001E8C25 /* CurriculumViewController.swift */; };
 		9B86A01E21EF3662001E8C25 /* PersonalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86A01C21EF3662001E8C25 /* PersonalTableViewCell.swift */; };
 		9B86A01F21EF3662001E8C25 /* PersonalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86A01D21EF3662001E8C25 /* PersonalTableViewController.swift */; };
-		9BA96D7622C4B3D500619B30 /* ChatViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA96D7522C4B3D500619B30 /* ChatViewViewController.swift */; };
 		9BA96D7822C4B4C600619B30 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA96D7722C4B4C600619B30 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +45,7 @@
 		13E45C8E22C0BDE100F5AF6D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		13E45C9022C0C02800F5AF6D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4E64E6617498D832E8FB246A /* Pods-Summary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Summary/Pods-Summary.debug.xcconfig"; sourceTree = "<group>"; };
+		9B31CFCF22C638AD008F834D /* ChatViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewViewController.swift; sourceTree = "<group>"; };
 		9B3D868321EA4BDE009E5DFA /* ShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
 		9B3D868521EA4EDD009E5DFA /* ShopTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewController.swift; sourceTree = "<group>"; };
 		9B3D868721EA813D009E5DFA /* ShopWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopWebViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		9B86A01821EF3605001E8C25 /* CurriculumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriculumViewController.swift; sourceTree = "<group>"; };
 		9B86A01C21EF3662001E8C25 /* PersonalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalTableViewCell.swift; sourceTree = "<group>"; };
 		9B86A01D21EF3662001E8C25 /* PersonalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalTableViewController.swift; sourceTree = "<group>"; };
-		9BA96D7522C4B3D500619B30 /* ChatViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatViewViewController.swift; path = ../../../Desktop/ChatViewViewController.swift; sourceTree = "<group>"; };
 		9BA96D7722C4B4C600619B30 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		D2D738DE3A366340768D1650 /* Pods-Summary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summary.release.xcconfig"; path = "Pods/Target Support Files/Pods-Summary/Pods-Summary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +145,7 @@
 		9B3F53A721E450E3002A5754 /* Summary */ = {
 			isa = PBXGroup;
 			children = (
+				9B31CFCF22C638AD008F834D /* ChatViewViewController.swift */,
 				9B3C9D6C21EE44B700316072 /* About */,
 				9B4E858221EDE804009F1A27 /* lesson */,
 				9B3ACBA821ECA1DD0078FAB0 /* movie */,
@@ -159,7 +160,6 @@
 				13E45C8B22C0BC6300F5AF6D /* Summary-Bridging-Header.h */,
 				13E45C8E22C0BDE100F5AF6D /* LoginViewController.swift */,
 				13E45C9022C0C02800F5AF6D /* RegisterViewController.swift */,
-				9BA96D7522C4B3D500619B30 /* ChatViewViewController.swift */,
 				9BA96D7722C4B4C600619B30 /* CustomTableViewCell.swift */,
 			);
 			path = Summary;
@@ -311,10 +311,10 @@
 				9B86A01A21EF3605001E8C25 /* CurriculumTableViewController.swift in Sources */,
 				9B3D868621EA4EDD009E5DFA /* ShopTableViewController.swift in Sources */,
 				13C2E8E521EF3929008FC86D /* ZMovieTableViewController.swift in Sources */,
-				9BA96D7622C4B3D500619B30 /* ChatViewViewController.swift in Sources */,
 				9B86A01E21EF3662001E8C25 /* PersonalTableViewCell.swift in Sources */,
 				13E45C8F22C0BDE100F5AF6D /* LoginViewController.swift in Sources */,
 				13C2E8DF21EF391D008FC86D /* PBookTableViewCell.swift in Sources */,
+				9B31CFD022C638AD008F834D /* ChatViewViewController.swift in Sources */,
 				9B3F53AB21E450E3002A5754 /* ViewController.swift in Sources */,
 				9B3F53A921E450E3002A5754 /* AppDelegate.swift in Sources */,
 			);
