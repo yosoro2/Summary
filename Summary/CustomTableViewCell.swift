@@ -14,7 +14,7 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet var avatarImageView: UIImageView!
     @IBOutlet var messageBody: UILabel!
     @IBOutlet var senderUsername: UILabel!
-    override func awakeFromNib() {
+        override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
