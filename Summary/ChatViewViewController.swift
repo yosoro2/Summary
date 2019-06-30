@@ -7,21 +7,33 @@
 //
 
 import UIKit
+import SwiftyJSON
+import ChameleonFramework
 
-class ChatViewViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate {
+class ChatViewViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,BmobEventDelegate {
     
     @IBOutlet weak var messageTableView: UITableView!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var sendbutton: UIButton!
+    var messageArray:[Message] = [Message]()
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return messageArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomTableViewCell
-        let messageArray = ["第一条信息","第二条信息6465464612316513214613216546515486465132489465467864987616131321","第三条信息"]
-        cell.messageBody.text  = messageArray[indexPath.row]
+        cell.messageBody.text = messageArray[indexPath.row].messageBody
+        cell.senderUsername.text = messageArray[indexPath.row].sender
+        cell.avatarImageView.image = UIImage(named: "egg")
+        
+        if cell.senderUsername.text == BmobUser.current().username {
+            cell.avatarImageView.backgroundColor = UIColor.flatMint()
+            cell.messageBackground.backgroundColor = UIColor.flatSkyBlue()
+        }else {
+            cell.avatarImageView.backgroundColor = UIColor.flatWatermelon()
+            cell.messageBackground.backgroundColor = UIColor.flatGray()
+        }
         return cell
         
     }
@@ -51,7 +63,58 @@ class ChatViewViewController: UIViewController,UITableViewDataSource,UITableView
         let chatMessage = BmobObject(className: "Message")
         chatMessage?.setObject(user?.username, forKey: "Sender")
         chatMessage?.setObject(messageTextField.text, forKey: "MessageBody")
-        chatMessage?.saveInBackground()
+        chatMessage?.saveInBackground(){
+            (isSuccessed,error) in
+            if error != nil {
+                print("error is \(error!.localizedDescription)")
+            }else{
+                print("聊天信息存储云端成功")
+                self.messageTextField.isEnabled = true
+                self.sendbutton.isEnabled = true
+                self.messageTextField.text = ""
+            }
+        }
+    }
+    
+    func listen() {
+        let event = BmobEvent.default()
+        if let event = event {
+            event.delegate = self
+            event.start()
+        }
+    }
+    
+    func bmobEventDidConnect(_ event: BmobEvent!) {
+        print(event.description)
+    }
+    
+    func bmobEventCanStartListen(_ event: BmobEvent!) {
+        event.listenTableChange(BmobActionTypeUpdateTable, tableName: "Message")
+    }
+    
+    
+    func bmobEvent(_ event: BmobEvent!, didReceiveMessage message: String!) {
+        let messageJSON: JSON = JSON(parseJSON: message)
+        print(messageJSON)
+        
+        let text = messageJSON["data"]["MessageBody"]
+        let sender = messageJSON["data"]["Sender"]
+        
+        let message: Message = Message()
+        message.messageBody = text.stringValue
+        message.sender = sender.stringValue
+        
+        self.messageArray.append(message)
+        self.configureTableView()
+        self.messageTableView.reloadData()
+    }
+    
+    func bmobEvent(_ event: BmobEvent!, error: Error!) {
+        print(error.localizedDescription)
+    }
+    
+    func bmobEventDidDisConnect(_ event: BmobEvent!, error: Error!) {
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +125,7 @@ class ChatViewViewController: UIViewController,UITableViewDataSource,UITableView
         configureTableView()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
         messageTableView.addGestureRecognizer(tapGesture)
+        listen()
         // Do any additional setup after loading the view.
         
     }

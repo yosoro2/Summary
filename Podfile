@@ -8,7 +8,9 @@ target 'Summary' do
   use_frameworks!
   
   pod 'BmobSDK'
-  pod 'SVProgressHUD'
+  pod 'SVProgressHUD' 
+  pod 'SwiftyJSON'
+  pod 'ChameleonFramework'
   # Pods for Summary
 
 end
