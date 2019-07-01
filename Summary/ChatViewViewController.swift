@@ -89,8 +89,15 @@ class ChatViewViewController: UIViewController,UITableViewDataSource,UITableView
     
     
     @IBAction func logo(_ sender: UIButton) {
-        BmobUser.logout()
-        dismiss(animated: true, completion: nil)
+        let alter = UIAlertController(title: "提示", message: "是否退出本界面并注销本账号", preferredStyle: .alert)
+        let button = UIAlertAction(title: "否", style: .cancel, handler: nil)
+        let button2 = UIAlertAction(title: "是", style: .destructive, handler: {action in
+            BmobUser.logout()
+            self.dismiss(animated: true, completion: nil)
+        })
+        alter.addAction(button)
+        alter.addAction(button2)
+        present(alter,animated: true,completion: nil)
     }
     func bmobEventDidConnect(_ event: BmobEvent!) {
         print(event.description)

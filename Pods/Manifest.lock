@@ -1,14 +1,20 @@
 PODS:
-  - BmobSDK (2.3.1)
+  - BmobSDK (2.3.4)
   - ChameleonFramework (2.1.0):
     - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
+  - Realm (3.17.0):
+    - Realm/Headers (= 3.17.0)
+  - Realm/Headers (3.17.0)
+  - RealmSwift (3.17.0):
+    - Realm (= 3.17.0)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - BmobSDK
   - ChameleonFramework
+  - RealmSwift
   - SVProgressHUD
   - SwiftyJSON
 
@@ -16,15 +22,19 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BmobSDK
     - ChameleonFramework
+    - Realm
+    - RealmSwift
     - SVProgressHUD
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  BmobSDK: e0f9e4b451233a80af63a8ae4f2d239474bf567b
+  BmobSDK: 03e9889d92b721bfc2452faa5b2c2497581abbca
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Realm: b30db41ff34fc858ffc25ba8d44a82c164e7ccd0
+  RealmSwift: fe733e459d60dc7b6971d4cbee2eb4854097d12c
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 940d827fa9c6eb322afb60bf0190a79b891d9867
+PODFILE CHECKSUM: 80a85586ebaede650d588c590c98dbc80d7c1d8f
 
 COCOAPODS: 1.5.2

@@ -11,6 +11,7 @@ target 'Summary' do
   pod 'SVProgressHUD' 
   pod 'SwiftyJSON'
   pod 'ChameleonFramework'
+  pod  'RealmSwift'
   # Pods for Summary
 
 end
