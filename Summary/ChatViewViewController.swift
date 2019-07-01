@@ -54,12 +54,15 @@ class ChatViewViewController: UIViewController,UITableViewDataSource,UITableView
         }
     }
     
+    @IBAction func change(_ sender: UITextField) {
+        empty()
+    }
+    
     @IBAction func sendPressed(_ sender: UIButton) {
         messageTextField.endEditing(true)
         messageTextField.isEnabled = false
         sendbutton.isEnabled = false
         let user = BmobUser.current()
-        
         let chatMessage = BmobObject(className: "Message")
         chatMessage?.setObject(user?.username, forKey: "Sender")
         chatMessage?.setObject(messageTextField.text, forKey: "MessageBody")
@@ -84,6 +87,11 @@ class ChatViewViewController: UIViewController,UITableViewDataSource,UITableView
         }
     }
     
+    
+    @IBAction func logo(_ sender: UIButton) {
+        BmobUser.logout()
+        dismiss(animated: true, completion: nil)
+    }
     func bmobEventDidConnect(_ event: BmobEvent!) {
         print(event.description)
     }
@@ -126,6 +134,7 @@ class ChatViewViewController: UIViewController,UITableViewDataSource,UITableView
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
         messageTableView.addGestureRecognizer(tapGesture)
         listen()
+        empty()
         // Do any additional setup after loading the view.
         
     }
@@ -133,6 +142,14 @@ class ChatViewViewController: UIViewController,UITableViewDataSource,UITableView
     func configureTableView() {
         messageTableView.rowHeight = UITableView.automaticDimension
         messageTableView.estimatedRowHeight = 120.0
+    }
+    
+    func empty() {
+        if messageTextField.text!.isEmpty {
+            sendbutton.isEnabled = false
+        }else{
+            sendbutton.isEnabled = true
+        }
     }
 
     @objc func tableViewTapped() {

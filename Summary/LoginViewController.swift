@@ -41,6 +41,8 @@ class LoginViewController: UIViewController {
                     SVProgressHUD.dismiss()
                 }else {
                     print("登录成功")
+                    self.username.text = ""
+                    self.password.text = ""
                     SVProgressHUD.dismiss()
                     self.performSegue(withIdentifier: "OK", sender: self)
                 }
