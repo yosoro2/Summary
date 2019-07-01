@@ -26,6 +26,7 @@
 		9B3F53B021E450F5002A5754 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B3F53AF21E450F5002A5754 /* Assets.xcassets */; };
 		9B3F53B321E450F5002A5754 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3F53B121E450F5002A5754 /* LaunchScreen.storyboard */; };
 		9B61F0EA22C72C6B0047E089 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B61F0E922C72C6B0047E089 /* Message.swift */; };
+		9B757AEF22C9A3F600F19767 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B757AEE22C9A3F600F19767 /* Date.swift */; };
 		9B86A01921EF3605001E8C25 /* CurriculumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86A01621EF3604001E8C25 /* CurriculumTableViewCell.swift */; };
 		9B86A01A21EF3605001E8C25 /* CurriculumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86A01721EF3605001E8C25 /* CurriculumTableViewController.swift */; };
 		9B86A01B21EF3605001E8C25 /* CurriculumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86A01821EF3605001E8C25 /* CurriculumViewController.swift */; };
@@ -58,6 +59,7 @@
 		9B3F53B221E450F5002A5754 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B3F53B421E450F5002A5754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B61F0E922C72C6B0047E089 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		9B757AEE22C9A3F600F19767 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		9B86A01621EF3604001E8C25 /* CurriculumTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriculumTableViewCell.swift; sourceTree = "<group>"; };
 		9B86A01721EF3605001E8C25 /* CurriculumTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriculumTableViewController.swift; sourceTree = "<group>"; };
 		9B86A01821EF3605001E8C25 /* CurriculumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriculumViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				9BA96D7722C4B4C600619B30 /* CustomTableViewCell.swift */,
 				9B31CFCF22C638AD008F834D /* ChatViewViewController.swift */,
 				9B61F0E922C72C6B0047E089 /* Message.swift */,
+				9B757AEE22C9A3F600F19767 /* Date.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				13E45C8F22C0BDE100F5AF6D /* LoginViewController.swift in Sources */,
 				13C2E8DF21EF391D008FC86D /* PBookTableViewCell.swift in Sources */,
 				9B31CFD022C638AD008F834D /* ChatViewViewController.swift in Sources */,
+				9B757AEF22C9A3F600F19767 /* Date.swift in Sources */,
 				9B3F53AB21E450E3002A5754 /* ViewController.swift in Sources */,
 				9B3F53A921E450E3002A5754 /* AppDelegate.swift in Sources */,
 			);
