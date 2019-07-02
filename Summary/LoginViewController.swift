@@ -8,9 +8,10 @@
 
 import UIKit
 import SVProgressHUD
+import RealmSwift
 
 class LoginViewController: UIViewController {
-
+    let realm = try! Realm()
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBAction func loginbutton(_ sender: UIButton) {
@@ -41,6 +42,12 @@ class LoginViewController: UIViewController {
                     SVProgressHUD.dismiss()
                 }else {
                     print("登录成功")
+                    let date = Date()
+                    date.user = self.username.text!
+                    let now = NSDate()
+                    date.date = now
+                    self.save(date: date)
+                    print(self.realm.configuration.fileURL ?? "")
                     self.username.text = ""
                     self.password.text = ""
                     SVProgressHUD.dismiss()
@@ -65,6 +72,15 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func save(date:Date) {
+        do{
+            try realm.write {
+                realm.add(date)}
+            } catch  {
+                print("")
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -76,4 +92,4 @@ class LoginViewController: UIViewController {
     }
     */
 
-}
+

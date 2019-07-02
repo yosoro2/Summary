@@ -11,5 +11,6 @@ import RealmSwift
 
 class Date: Object {
     @objc dynamic var user:String = ""
-    @objc dynamic var date:Date = Date()
+    @objc dynamic var date:NSDate? = nil
 }
+
