@@ -15,11 +15,18 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var telephonetext: UITextField!
     @IBAction func closeShowGirl(segue:UIStoryboardSegue){
         SVProgressHUD.show()
         let user = BmobUser()
         user.username = usernameText.text!
         user.password = passwordText.text!
+        if emailText.text?.isEmpty == false {
+            user.email = self.emailText.text!
+        }
+        if telephonetext.text?.isEmpty == false{
+            user.mobilePhoneNumber = self.telephonetext.text!
+        }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
         user.signUpInBackground{(isSuccessful,error) in
             if self.usernameText.text!.isEmpty{
@@ -36,19 +43,19 @@ class RegisterViewController: UIViewController {
                 tip.addAction(button)
                 self.present(tip, animated: true, completion: nil)
                 SVProgressHUD.dismiss()
-            }else if self.emailText.text!.isEmpty && isSuccessful {
-                print("注册成功,")
-                SVProgressHUD.dismiss()
-                let tip = UIAlertController(title: "提示", message: "注册成功", preferredStyle: .alert)
-                let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                tip.addAction(button)
-                self.present(tip, animated: true, completion: nil)
-                //self.performSegue(withIdentifier: "goToChat", sender: self)
-                self.presentingViewController!.dismiss(animated: true, completion: nil)
-            }else if isSuccessful && self.emailText.text!.isEmpty == false{
+            }else if isSuccessful{
                 user.email = self.emailText.text!
+                print(self.emailText.text!)
                 print("注册成功.")
                 SVProgressHUD.dismiss()
+                BmobSMS.requestCodeInBackground(withPhoneNumber: self.telephonetext.text!, andTemplate: "Summary"){
+                    (msg,error) in
+                    if error != nil{
+                        print(error?.localizedDescription)
+                    }else{
+                        print("OK")
+                    }
+                }
                 let tip = UIAlertController(title: "提示", message: "注册成功", preferredStyle: .alert)
                 let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 self.performSegue(withIdentifier: "goToHome", sender: self)
